@@ -13,7 +13,7 @@ class ApplicationsSplitViewController: NSSplitViewController {
 	var applications: Applications? {
 		didSet {
 			applicationsViewController.applications = applications
-//			applicationViewController.application = nil
+			applicationViewController.applicationSet = nil
 		}
 	}
 
