@@ -10,6 +10,7 @@ import Cocoa
 
 class RootViewController: NSViewController {
 
+	@IBOutlet weak var refreshOpenButton: NSButton!
 	@IBOutlet weak var segmentedControl: NSSegmentedControl!
 	@IBOutlet weak var rootOpenButton: NSButton!
 	@IBOutlet weak var nothingLabel: NSTextField!
@@ -33,21 +34,7 @@ class RootViewController: NSViewController {
 	override func viewDidAppear() {
 		super.viewDidAppear()
 
-		do {
-			devices = try Devices()
-			applications = try Applications(devices: devices)
-		} catch {
-			print("error occurred: \(error)")
-			nothingLabel.isHidden = false
-			return
-		}
-		devicesSplitViewController.devices = devices
-		applicationsSplitViewController.applications = applications
-
-		segmentedControl.isEnabled = true
-		segmentedControl.selectedSegment = 0
-		rootOpenButton.isEnabled = true
-		didChangeSegmentedControlValue(segmentedControl)
+		didClickRefreshButton(refreshOpenButton)
 	}
 
 	override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
@@ -68,6 +55,29 @@ class RootViewController: NSViewController {
 		default:
 			break
 		}
+	}
+
+	@IBAction func didClickRefreshButton(_ sender: NSButton) {
+		do {
+			devices = try Devices()
+			applications = try Applications(devices: devices)
+
+			devicesSplitViewController.devices = devices
+			applicationsSplitViewController.applications = applications
+
+			segmentedControl.isEnabled = true
+			segmentedControl.selectedSegment = 0
+			rootOpenButton.isEnabled = true
+			nothingLabel.isHidden = true
+		} catch {
+			print("error occurred: \(error)")
+
+			segmentedControl.isEnabled = false
+			segmentedControl.selectedSegment = -1
+			rootOpenButton.isEnabled = false
+			nothingLabel.isHidden = false
+		}
+		didChangeSegmentedControlValue(segmentedControl)
 	}
 
 	@IBAction func didChangeSegmentedControlValue(_ sender: NSSegmentedControl) {

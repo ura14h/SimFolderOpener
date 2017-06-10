@@ -749,9 +749,20 @@
                                     <action selector="didClickRootOpenButton:" target="XfG-lQ-9wD" id="80F-Vf-3Vp"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2AT-XR-8bY">
+                                <rect key="frame" x="8" y="241" width="58" height="19"/>
+                                <buttonCell key="cell" type="roundRect" title="Refresh" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c4y-uu-1RK">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="cellTitle"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didClickRefreshButton:" target="XfG-lQ-9wD" id="nVC-cc-UGw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Jyt-0H-I2T" firstAttribute="baseline" secondItem="0Xe-kI-Rw7" secondAttribute="baseline" id="2Hj-rN-2zd"/>
+                            <constraint firstItem="2AT-XR-8bY" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="8" id="2zV-n8-YCi"/>
                             <constraint firstItem="mK0-cS-Y0Z" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="4Fo-yT-V0o"/>
                             <constraint firstAttribute="bottom" secondItem="mK0-cS-Y0Z" secondAttribute="bottom" id="8lm-b5-m4r"/>
                             <constraint firstItem="0Xe-kI-Rw7" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="LG9-R8-Q2M"/>
@@ -759,6 +770,7 @@
                             <constraint firstAttribute="trailing" secondItem="Jyt-0H-I2T" secondAttribute="trailing" constant="8" id="c5g-xH-RIy"/>
                             <constraint firstAttribute="trailing" secondItem="mK0-cS-Y0Z" secondAttribute="trailing" id="dTg-Ct-qse"/>
                             <constraint firstItem="TyL-aT-W6L" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="i8r-N5-5kc"/>
+                            <constraint firstItem="2AT-XR-8bY" firstAttribute="baseline" secondItem="0Xe-kI-Rw7" secondAttribute="baseline" id="rg3-am-alj"/>
                             <constraint firstItem="mK0-cS-Y0Z" firstAttribute="top" secondItem="0Xe-kI-Rw7" secondAttribute="bottom" constant="8" id="saI-X7-Zc3"/>
                             <constraint firstItem="mK0-cS-Y0Z" firstAttribute="top" secondItem="TyL-aT-W6L" secondAttribute="bottom" id="wC0-NE-hPS"/>
                             <constraint firstItem="0Xe-kI-Rw7" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="8" id="wXP-JG-f1A"/>
@@ -768,6 +780,7 @@
                         <outlet property="applicationsContainerView" destination="0Ni-u2-t4V" id="Zhr-wK-BIR"/>
                         <outlet property="devicesContainerView" destination="nNg-U2-vtb" id="KTs-Lr-chM"/>
                         <outlet property="nothingLabel" destination="OfT-iS-eWq" id="0Sa-4g-VpR"/>
+                        <outlet property="refreshOpenButton" destination="2AT-XR-8bY" id="V9X-rz-8DN"/>
                         <outlet property="rootOpenButton" destination="Jyt-0H-I2T" id="NeV-S5-wvJ"/>
                         <outlet property="segmentedControl" destination="0Xe-kI-Rw7" id="HeY-br-No3"/>
                     </connections>
