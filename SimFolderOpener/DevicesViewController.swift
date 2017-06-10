@@ -189,7 +189,7 @@ class DevicesViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
 	}
 
 	func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
-		guard let view = outlineView.make(withIdentifier: "DataCell", owner: self) as? NSTableCellView else {
+		guard let view = outlineView.make(withIdentifier: "DeviceDataCell", owner: self) as? NSTableCellView else {
 			return nil
 		}
 

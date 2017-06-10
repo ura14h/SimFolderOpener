@@ -17,6 +17,10 @@
 		31C0C4C11ED9056F00D33467 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0C4C01ED9056F00D33467 /* DeviceViewController.swift */; };
 		31C0C4C31ED905ED00D33467 /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0C4C21ED905ED00D33467 /* Devices.swift */; };
 		31C0C4C51ED9061800D33467 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0C4C41ED9061800D33467 /* Device.swift */; };
+		31E3EE3E1EEB88B600AF1240 /* ApplicationsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E3EE3D1EEB88B600AF1240 /* ApplicationsSplitViewController.swift */; };
+		31E3EE401EEB895D00AF1240 /* ApplicationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E3EE3F1EEB895D00AF1240 /* ApplicationsViewController.swift */; };
+		31E3EE421EEB898A00AF1240 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E3EE411EEB898A00AF1240 /* ApplicationViewController.swift */; };
+		31E3EE441EEB8C9400AF1240 /* Applications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E3EE431EEB8C9400AF1240 /* Applications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		31C0C4C01ED9056F00D33467 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DeviceViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		31C0C4C21ED905ED00D33467 /* Devices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Devices.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		31C0C4C41ED9061800D33467 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Device.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		31E3EE3D1EEB88B600AF1240 /* ApplicationsSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationsSplitViewController.swift; sourceTree = "<group>"; };
+		31E3EE3F1EEB895D00AF1240 /* ApplicationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationsViewController.swift; sourceTree = "<group>"; };
+		31E3EE411EEB898A00AF1240 /* ApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
+		31E3EE431EEB8C9400AF1240 /* Applications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Applications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +77,12 @@
 				31C0C4B61ED9021600D33467 /* DevicesSplitViewController.swift */,
 				31C0C4BE1ED9054A00D33467 /* DevicesViewController.swift */,
 				31C0C4C01ED9056F00D33467 /* DeviceViewController.swift */,
+				31E3EE3D1EEB88B600AF1240 /* ApplicationsSplitViewController.swift */,
+				31E3EE3F1EEB895D00AF1240 /* ApplicationsViewController.swift */,
+				31E3EE411EEB898A00AF1240 /* ApplicationViewController.swift */,
 				31C0C4C21ED905ED00D33467 /* Devices.swift */,
 				31C0C4C41ED9061800D33467 /* Device.swift */,
+				31E3EE431EEB8C9400AF1240 /* Applications.swift */,
 				3149EA671EE2B3F70037A446 /* Applicatoin.swift */,
 				31C0C4AB1ED8F1FC00D33467 /* Assets.xcassets */,
 				31C0C4AD1ED8F1FC00D33467 /* Main.storyboard */,
@@ -155,10 +167,14 @@
 				31C0C4AA1ED8F1FC00D33467 /* RootViewController.swift in Sources */,
 				31C0C4BF1ED9054A00D33467 /* DevicesViewController.swift in Sources */,
 				3149EA681EE2B3F70037A446 /* Applicatoin.swift in Sources */,
+				31E3EE441EEB8C9400AF1240 /* Applications.swift in Sources */,
+				31E3EE3E1EEB88B600AF1240 /* ApplicationsSplitViewController.swift in Sources */,
+				31E3EE401EEB895D00AF1240 /* ApplicationsViewController.swift in Sources */,
 				31C0C4C31ED905ED00D33467 /* Devices.swift in Sources */,
 				31C0C4C51ED9061800D33467 /* Device.swift in Sources */,
 				31C0C4A81ED8F1FC00D33467 /* AppDelegate.swift in Sources */,
 				31C0C4B71ED9021600D33467 /* DevicesSplitViewController.swift in Sources */,
+				31E3EE421EEB898A00AF1240 /* ApplicationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

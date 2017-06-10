@@ -49,6 +49,7 @@ class DeviceViewController: NSViewController, NSTableViewDataSource, NSTableView
 			applicationTitleLabel.stringValue = ""
 			applicationOpenButton.isEnabled = false
 
+			tableView.usesAlternatingRowBackgroundColors = nothingView.isHidden
 			tableView.reloadData()
 			tableView.sizeToFit()
 		}
@@ -64,8 +65,9 @@ class DeviceViewController: NSViewController, NSTableViewDataSource, NSTableView
 		applicationTitleLabel.stringValue = ""
 		applicationOpenButton.isEnabled = false
 
+		tableView.usesAlternatingRowBackgroundColors = nothingView.isHidden
 		tableView.sizeToFit()
-    }
+}
 
 	func numberOfRows(in tableView: NSTableView) -> Int {
 		return applications.count
