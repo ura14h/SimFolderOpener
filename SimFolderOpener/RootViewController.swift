@@ -24,10 +24,8 @@ class RootViewController: NSViewController {
 	override func viewDidAppear() {
 		super.viewDidAppear()
 
-		let path = "~/Library/Developer/CoreSimulator/Devices"
-		let absolutePath = NSString(string: path).expandingTildeInPath
 		do {
-			devices = try Devices(path: absolutePath)
+			devices = try Devices()
 		} catch {
 			print("error occurred: \(error)")
 		}

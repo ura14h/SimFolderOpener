@@ -13,6 +13,13 @@ class Devices: CustomStringConvertible {
 	let path: String
 	let list: [Device]
 
+	convenience init() throws {
+		let path = "~/Library/Developer/CoreSimulator/Devices"
+		let absolutePath = NSString(string: path).expandingTildeInPath
+
+		try self.init(path: absolutePath)
+	}
+
 	init(path: String) throws {
 		guard let contents = try? FileManager.default.contentsOfDirectory(atPath: path) else {
 			throw CocoaError(.fileReadNoSuchFile)
