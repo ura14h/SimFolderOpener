@@ -76,8 +76,7 @@ class DevicesViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
 				guard let leafs = deviceDictionary[deviceType] else {
 					return
 				}
-				let name = leafs.first!.body.deviceType
-				let node = Node(name: name, leafs: leafs)
+				let node = Node(name: deviceType, leafs: leafs)
 				nodes.append(node)
 			}
 
@@ -102,8 +101,7 @@ class DevicesViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
 				guard let leafs = deviceDictionary[runtimeType] else {
 					return
 				}
-				let name = leafs.first!.body.runtimeType
-				let node = Node(name: name, leafs: leafs)
+				let node = Node(name: runtimeType, leafs: leafs)
 				nodes.append(node)
 			}
 
