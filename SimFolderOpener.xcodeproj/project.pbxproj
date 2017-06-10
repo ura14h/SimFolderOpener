@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3149EA641EE236A20037A446 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3149EA631EE236A20037A446 /* Tree.swift */; };
-		3149EA661EE236BA0037A446 /* RuntimeTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3149EA651EE236BA0037A446 /* RuntimeTree.swift */; };
 		3149EA681EE2B3F70037A446 /* Applicatoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3149EA671EE2B3F70037A446 /* Applicatoin.swift */; };
 		31C0C4A81ED8F1FC00D33467 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0C4A71ED8F1FC00D33467 /* AppDelegate.swift */; };
 		31C0C4AA1ED8F1FC00D33467 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0C4A91ED8F1FC00D33467 /* RootViewController.swift */; };
@@ -19,12 +17,9 @@
 		31C0C4C11ED9056F00D33467 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0C4C01ED9056F00D33467 /* DeviceViewController.swift */; };
 		31C0C4C31ED905ED00D33467 /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0C4C21ED905ED00D33467 /* Devices.swift */; };
 		31C0C4C51ED9061800D33467 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0C4C41ED9061800D33467 /* Device.swift */; };
-		31D5CBF71EE03DB2001E8F6A /* DeviceTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D5CBF61EE03DB2001E8F6A /* DeviceTree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3149EA631EE236A20037A446 /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Tree.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		3149EA651EE236BA0037A446 /* RuntimeTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuntimeTree.swift; sourceTree = "<group>"; };
 		3149EA671EE2B3F70037A446 /* Applicatoin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Applicatoin.swift; sourceTree = "<group>"; };
 		31C0C4A41ED8F1FC00D33467 /* SimFolderOpener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimFolderOpener.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C0C4A71ED8F1FC00D33467 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +32,6 @@
 		31C0C4C01ED9056F00D33467 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DeviceViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		31C0C4C21ED905ED00D33467 /* Devices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Devices.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		31C0C4C41ED9061800D33467 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Device.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		31D5CBF61EE03DB2001E8F6A /* DeviceTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +72,6 @@
 				31C0C4C21ED905ED00D33467 /* Devices.swift */,
 				31C0C4C41ED9061800D33467 /* Device.swift */,
 				3149EA671EE2B3F70037A446 /* Applicatoin.swift */,
-				3149EA631EE236A20037A446 /* Tree.swift */,
-				31D5CBF61EE03DB2001E8F6A /* DeviceTree.swift */,
-				3149EA651EE236BA0037A446 /* RuntimeTree.swift */,
 				31C0C4AB1ED8F1FC00D33467 /* Assets.xcassets */,
 				31C0C4AD1ED8F1FC00D33467 /* Main.storyboard */,
 				31C0C4B01ED8F1FC00D33467 /* Info.plist */,
@@ -164,10 +155,7 @@
 				31C0C4AA1ED8F1FC00D33467 /* RootViewController.swift in Sources */,
 				31C0C4BF1ED9054A00D33467 /* DevicesViewController.swift in Sources */,
 				3149EA681EE2B3F70037A446 /* Applicatoin.swift in Sources */,
-				3149EA641EE236A20037A446 /* Tree.swift in Sources */,
-				31D5CBF71EE03DB2001E8F6A /* DeviceTree.swift in Sources */,
 				31C0C4C31ED905ED00D33467 /* Devices.swift in Sources */,
-				3149EA661EE236BA0037A446 /* RuntimeTree.swift in Sources */,
 				31C0C4C51ED9061800D33467 /* Device.swift in Sources */,
 				31C0C4A81ED8F1FC00D33467 /* AppDelegate.swift in Sources */,
 				31C0C4B71ED9021600D33467 /* DevicesSplitViewController.swift in Sources */,

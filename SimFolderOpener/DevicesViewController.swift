@@ -10,6 +10,108 @@ import Cocoa
 
 class DevicesViewController: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate {
 
+	class Tree: NSObject {
+
+		let name: String
+		let nodes: [Node]
+
+		class Node: NSObject {
+			let name: String
+			let leafs: [Leaf]
+
+			init(name: String, leafs: [Leaf]) {
+				self.name = name
+				self.leafs = leafs
+			}
+
+			override var description: String {
+				get {
+					return "Node {name=\"\(name)\", leafs=[\(leafs)]}"
+				}
+			}
+		}
+
+		class Leaf: NSObject {
+			let name: String
+			let body: Device
+
+			init(name: String, body: Device) {
+				self.name = name
+				self.body = body
+			}
+
+			override var description: String {
+				get {
+					return "Leaf {name=\"\(name)\", body=[\(body)]}"
+				}
+			}
+		}
+
+		init(name: String, nodes: [Node]) {
+			self.name = name
+			self.nodes = nodes
+		}
+
+		override var description: String {
+			get {
+				return "Tree {name=\"\(name)\", nodes=[\(nodes)]}"
+			}
+		}
+		
+	}
+
+	class DeviceTree: Tree {
+
+		init(name: String, devices: Devices) {
+			let deviceList = devices.list
+			var deviceDictionary = [String: [Leaf]]()
+			deviceList.sorted(by: { $0.0.runtimeType < $0.1.runtimeType }).forEach { (device) in
+				var leafs = deviceDictionary[device.deviceType] ?? [Leaf]()
+				leafs.append(Leaf(name: device.runtimeType, body: device))
+				deviceDictionary[device.deviceType] = leafs
+			}
+
+			var nodes = [Node]()
+			deviceDictionary.keys.sorted(by: { $0.0 < $0.1 }).forEach { (deviceType) in
+				guard let leafs = deviceDictionary[deviceType] else {
+					return
+				}
+				let name = leafs.first!.body.deviceType
+				let node = Node(name: name, leafs: leafs)
+				nodes.append(node)
+			}
+
+			super.init(name: name, nodes: nodes)
+		}
+		
+	}
+
+	class RuntimeTree: Tree {
+
+		init(name: String, devices: Devices) {
+			let deviceList = devices.list
+			var deviceDictionary = [String: [Leaf]]()
+			deviceList.sorted(by: { $0.0.deviceType < $0.1.deviceType }).forEach { (device) in
+				var leafs = deviceDictionary[device.runtimeType] ?? [Leaf]()
+				leafs.append(Leaf(name: device.deviceType, body: device))
+				deviceDictionary[device.runtimeType] = leafs
+			}
+
+			var nodes = [Node]()
+			deviceDictionary.keys.sorted(by: { $0.0 < $0.1 }).forEach { (runtimeType) in
+				guard let leafs = deviceDictionary[runtimeType] else {
+					return
+				}
+				let name = leafs.first!.body.runtimeType
+				let node = Node(name: name, leafs: leafs)
+				nodes.append(node)
+			}
+
+			super.init(name: name, nodes: nodes)
+		}
+		
+	}
+
 	enum TreeType: Int {
 		case devices = 0
 		case runtimes = 1
@@ -51,7 +153,7 @@ class DevicesViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		syncSegmentedControlValue()
+		segmentedControl.selectedSegment = outlineViewTreeType.rawValue
     }
 
 	func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
@@ -126,10 +228,6 @@ class DevicesViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
 
 	@IBAction func didChangeSegmentedControlValue(_ sender: NSSegmentedControl) {
 		outlineViewTreeType = TreeType(rawValue: segmentedControl.selectedSegment)!
-	}
-
-	private func syncSegmentedControlValue() {
-		segmentedControl.selectedSegment = outlineViewTreeType.rawValue
 	}
 
 	private func openDeviceFolder(_ device: Device) {

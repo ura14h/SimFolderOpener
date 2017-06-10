@@ -75,10 +75,10 @@ class DeviceViewController: NSViewController, NSTableViewDataSource, NSTableView
 			return nil
 		}
 		let view = tableView.make(withIdentifier: identifier, owner: self) as! NSTableCellView
+
 		guard let device = device else {
 			return nil
 		}
-
 		let application = device.applications[row]
 		switch identifier {
 		case "BundleIdDataCell":
