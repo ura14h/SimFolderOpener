@@ -689,7 +689,7 @@
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="nNg-U2-vtb">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                 <connections>
-                                    <segue destination="Qf6-DK-NG1" kind="embed" identifier="" id="U9A-p3-rrd"/>
+                                    <segue destination="Qf6-DK-NG1" kind="embed" identifier="EmbedDevicesSplitView" id="U9A-p3-rrd"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -705,10 +705,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
-        <!--Split View Controller-->
+        <!--Devices Split View Controller-->
         <scene sceneID="PS5-oI-Xpl">
             <objects>
-                <splitViewController id="Qf6-DK-NG1" customClass="SplitViewController" customModule="SimFolderOpener" customModuleProvider="target" sceneMemberID="viewController">
+                <splitViewController id="Qf6-DK-NG1" customClass="DevicesSplitViewController" customModule="SimFolderOpener" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem canCollapse="YES" holdingPriority="260" behavior="sidebar" id="6CX-7J-WZ1"/>
                         <splitViewItem id="O66-gC-AGZ"/>

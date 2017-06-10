@@ -10,8 +10,42 @@ import Cocoa
 
 class RootViewController: NSViewController {
 
+	private var devicesSplitViewController: DevicesSplitViewController!
+	private var devices: Devices? {
+		didSet {
+			devicesSplitViewController.devices = devices
+		}
+	}
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
+	}
+
+	override func viewDidAppear() {
+		super.viewDidAppear()
+
+		let path = "~/Library/Developer/CoreSimulator/Devices"
+		let absolutePath = NSString(string: path).expandingTildeInPath
+		do {
+			devices = try Devices(path: absolutePath)
+		} catch {
+			print("error occurred: \(error)")
+		}
+	}
+
+	override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+		guard let identifier = segue.identifier else {
+			return
+		}
+		switch identifier {
+		case "EmbedDevicesSplitView":
+			guard let controller = segue.destinationController as? DevicesSplitViewController else {
+				return
+			}
+			devicesSplitViewController = controller
+		default:
+			break
+		}
 	}
 
 }

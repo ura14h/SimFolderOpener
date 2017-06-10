@@ -14,7 +14,7 @@
 		31C0C4AA1ED8F1FC00D33467 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0C4A91ED8F1FC00D33467 /* RootViewController.swift */; };
 		31C0C4AC1ED8F1FC00D33467 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31C0C4AB1ED8F1FC00D33467 /* Assets.xcassets */; };
 		31C0C4AF1ED8F1FC00D33467 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C0C4AD1ED8F1FC00D33467 /* Main.storyboard */; };
-		31C0C4B71ED9021600D33467 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0C4B61ED9021600D33467 /* SplitViewController.swift */; };
+		31C0C4B71ED9021600D33467 /* DevicesSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0C4B61ED9021600D33467 /* DevicesSplitViewController.swift */; };
 		31C0C4BF1ED9054A00D33467 /* DevicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0C4BE1ED9054A00D33467 /* DevicesViewController.swift */; };
 		31C0C4C11ED9056F00D33467 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0C4C01ED9056F00D33467 /* DeviceViewController.swift */; };
 		31C0C4C31ED905ED00D33467 /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0C4C21ED905ED00D33467 /* Devices.swift */; };
@@ -32,7 +32,7 @@
 		31C0C4AB1ED8F1FC00D33467 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31C0C4AE1ED8F1FC00D33467 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		31C0C4B01ED8F1FC00D33467 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		31C0C4B61ED9021600D33467 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SplitViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		31C0C4B61ED9021600D33467 /* DevicesSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DevicesSplitViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		31C0C4BE1ED9054A00D33467 /* DevicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DevicesViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		31C0C4C01ED9056F00D33467 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DeviceViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		31C0C4C21ED905ED00D33467 /* Devices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Devices.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -72,7 +72,7 @@
 			children = (
 				31C0C4A71ED8F1FC00D33467 /* AppDelegate.swift */,
 				31C0C4A91ED8F1FC00D33467 /* RootViewController.swift */,
-				31C0C4B61ED9021600D33467 /* SplitViewController.swift */,
+				31C0C4B61ED9021600D33467 /* DevicesSplitViewController.swift */,
 				31C0C4BE1ED9054A00D33467 /* DevicesViewController.swift */,
 				31C0C4C01ED9056F00D33467 /* DeviceViewController.swift */,
 				31C0C4C21ED905ED00D33467 /* Devices.swift */,
@@ -170,7 +170,7 @@
 				3149EA661EE236BA0037A446 /* RuntimeTree.swift in Sources */,
 				31C0C4C51ED9061800D33467 /* Device.swift in Sources */,
 				31C0C4A81ED8F1FC00D33467 /* AppDelegate.swift in Sources */,
-				31C0C4B71ED9021600D33467 /* SplitViewController.swift in Sources */,
+				31C0C4B71ED9021600D33467 /* DevicesSplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

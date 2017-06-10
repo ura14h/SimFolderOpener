@@ -1,5 +1,5 @@
 //
-//  SplitViewController.swift
+//  DevicesSplitViewController.swift
 //  SimFolderOpener
 //
 //  Created by Hiroki Ishiura on 2017/05/27.
@@ -8,17 +8,18 @@
 
 import Cocoa
 
-class SplitViewController: NSSplitViewController {
+class DevicesSplitViewController: NSSplitViewController {
 
-	private var devicesViewController: DevicesViewController!
-	private var deviceViewController: DeviceViewController!
-	private var devices: Devices? {
+	var devices: Devices? {
 		didSet {
 			devicesViewController.devices = devices
 			deviceViewController.device = nil
 		}
 	}
 
+	private var devicesViewController: DevicesViewController!
+	private var deviceViewController: DeviceViewController!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,16 +28,4 @@ class SplitViewController: NSSplitViewController {
 		devicesViewController.deviceViewController = deviceViewController
     }
     
-	override func viewDidAppear() {
-		super.viewDidAppear()
-
-		let path = "~/Library/Developer/CoreSimulator/Devices"
-		let absolutePath = NSString(string: path).expandingTildeInPath
-		do {
-			devices = try Devices(path: absolutePath)
-		} catch {
-			print("error occurred: \(error)")
-		}
-	}
-
 }
