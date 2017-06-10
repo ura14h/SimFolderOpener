@@ -50,6 +50,7 @@ class DeviceViewController: NSViewController, NSTableViewDataSource, NSTableView
 			applicationOpenButton.isEnabled = false
 
 			tableView.reloadData()
+			tableView.sizeToFit()
 		}
 	}
 

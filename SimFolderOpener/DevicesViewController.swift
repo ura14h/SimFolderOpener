@@ -139,12 +139,14 @@ class DevicesViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
 			outlineViewTree = outlineViewTreeType.tree(devices: devices)
 		}
 	}
-	var outlineViewTreeType = TreeType.devices {
+
+	private var outlineViewTreeType = TreeType.devices {
 		didSet {
 			outlineViewTree = outlineViewTreeType.tree(devices: devices)
 		}
 	}
-	var outlineViewTree: Tree? {
+
+	private var outlineViewTree: Tree? {
 		didSet {
 			outlineView.reloadData()
 		}
