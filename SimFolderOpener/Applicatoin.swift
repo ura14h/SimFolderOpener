@@ -60,6 +60,9 @@ class Application: CustomStringConvertible {
 			}
 			applications.append(application)
 		}
+		applications.sort {
+			$0.0.name < $0.1.name
+		}
 
 		return applications
 	}
