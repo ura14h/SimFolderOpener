@@ -65,14 +65,14 @@ class DevicesViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
 		init(name: String, devices: Devices) {
 			let deviceList = devices.list
 			var deviceDictionary = [String: [Leaf]]()
-			deviceList.sorted(by: { $0.0.runtimeType < $0.1.runtimeType }).forEach { (device) in
+			deviceList.sorted(by: { $0.runtimeType < $1.runtimeType }).forEach { (device) in
 				var leafs = deviceDictionary[device.deviceType] ?? [Leaf]()
 				leafs.append(Leaf(name: device.runtimeType, body: device))
 				deviceDictionary[device.deviceType] = leafs
 			}
 
 			var nodes = [Node]()
-			deviceDictionary.keys.sorted(by: { $0.0 < $0.1 }).forEach { (deviceType) in
+			deviceDictionary.keys.sorted(by: { $0 < $1 }).forEach { (deviceType) in
 				guard let leafs = deviceDictionary[deviceType] else {
 					return
 				}
@@ -90,14 +90,14 @@ class DevicesViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
 		init(name: String, devices: Devices) {
 			let deviceList = devices.list
 			var deviceDictionary = [String: [Leaf]]()
-			deviceList.sorted(by: { $0.0.deviceType < $0.1.deviceType }).forEach { (device) in
+			deviceList.sorted(by: { $0.deviceType < $1.deviceType }).forEach { (device) in
 				var leafs = deviceDictionary[device.runtimeType] ?? [Leaf]()
 				leafs.append(Leaf(name: device.deviceType, body: device))
 				deviceDictionary[device.runtimeType] = leafs
 			}
 
 			var nodes = [Node]()
-			deviceDictionary.keys.sorted(by: { $0.0 < $0.1 }).forEach { (runtimeType) in
+			deviceDictionary.keys.sorted(by: { $0 < $1 }).forEach { (runtimeType) in
 				guard let leafs = deviceDictionary[runtimeType] else {
 					return
 				}
@@ -189,7 +189,7 @@ class DevicesViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
 	}
 
 	func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
-		guard let view = outlineView.make(withIdentifier: "DeviceDataCell", owner: self) as? NSTableCellView else {
+		guard let view = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "DeviceDataCell"), owner: self) as? NSTableCellView else {
 			return nil
 		}
 
@@ -231,7 +231,7 @@ class DevicesViewController: NSViewController, NSOutlineViewDataSource, NSOutlin
 	}
 
 	private func openDeviceFolder(_ device: Device) {
-		NSWorkspace.shared().selectFile(nil, inFileViewerRootedAtPath: device.path)
+		NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: device.path)
 	}
 
 	private func openDeviceView(_ device: Device) {

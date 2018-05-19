@@ -77,13 +77,13 @@ class DeviceViewController: NSViewController, NSTableViewDataSource, NSTableView
 		guard let identifier = tableColumn?.identifier else {
 			return nil
 		}
-		let view = tableView.make(withIdentifier: identifier, owner: self) as! NSTableCellView
+		let view = tableView.makeView(withIdentifier: identifier, owner: self) as! NSTableCellView
 
 		guard let device = device else {
 			return nil
 		}
 		let application = device.applications[row]
-		switch identifier {
+		switch identifier.rawValue {
 		case "BundleIdDataCell":
 			view.textField!.stringValue = application.name
 		case "LastModifiedDataCell":
@@ -126,7 +126,7 @@ class DeviceViewController: NSViewController, NSTableViewDataSource, NSTableView
 		guard let device = device else {
 			return
 		}
-		NSWorkspace.shared().selectFile(nil, inFileViewerRootedAtPath: device.path)
+		NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: device.path)
 	}
 
 	@IBAction func didClickApplicationOpenButton(_ sender: NSButton) {
@@ -138,7 +138,7 @@ class DeviceViewController: NSViewController, NSTableViewDataSource, NSTableView
 		guard let dataPath = application.dataPath else {
 			return
 		}
-		NSWorkspace.shared().selectFile(nil, inFileViewerRootedAtPath: dataPath)
+		NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: dataPath)
 	}
 
 }

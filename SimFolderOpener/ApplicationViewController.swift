@@ -65,14 +65,14 @@ class ApplicationViewController: NSViewController, NSOutlineViewDataSource, NSOu
 		init(name: String, applicationSet: Applications.ApplicationSet) {
 			let deviceList = applicationSet.devices
 			var deviceDictionary = [String: [Device]]()
-			deviceList.sorted(by: { $0.0.runtimeType < $0.1.runtimeType }).forEach { (device) in
+			deviceList.sorted(by: { $0.runtimeType < $1.runtimeType }).forEach { (device) in
 				var runtimes = deviceDictionary[device.deviceType] ?? [Device]()
 				runtimes.append(device)
 				deviceDictionary[device.deviceType] = runtimes
 			}
 
 			var nodes = [Node]()
-			deviceDictionary.keys.sorted(by: { $0.0 < $0.1 }).forEach { (deviceType) in
+			deviceDictionary.keys.sorted(by: { $0 < $1 }).forEach { (deviceType) in
 				guard let runtimes = deviceDictionary[deviceType] else {
 					return
 				}
@@ -101,14 +101,14 @@ class ApplicationViewController: NSViewController, NSOutlineViewDataSource, NSOu
 		init(name: String, applicationSet: Applications.ApplicationSet) {
 			let deviceList = applicationSet.devices
 			var runtimeDictionary = [String: [Device]]()
-			deviceList.sorted(by: { $0.0.deviceType < $0.1.deviceType }).forEach { (device) in
+			deviceList.sorted(by: { $0.deviceType < $1.deviceType }).forEach { (device) in
 				var devices = runtimeDictionary[device.runtimeType] ?? [Device]()
 				devices.append(device)
 				runtimeDictionary[device.runtimeType] = devices
 			}
 
 			var nodes = [Node]()
-			runtimeDictionary.keys.sorted(by: { $0.0 < $0.1 }).forEach { (runtimeType) in
+			runtimeDictionary.keys.sorted(by: { $0 < $1 }).forEach { (runtimeType) in
 				guard let devices = runtimeDictionary[runtimeType] else {
 					return
 				}
@@ -241,11 +241,11 @@ class ApplicationViewController: NSViewController, NSOutlineViewDataSource, NSOu
 		guard let identifier = tableColumn?.identifier else {
 			return nil
 		}
-		let view = outlineView.make(withIdentifier: identifier, owner: self) as! NSTableCellView
+		let view = outlineView.makeView(withIdentifier: identifier, owner: self) as! NSTableCellView
 
 		if let node = item as? Tree.Node {
 			let text: String
-			switch identifier {
+			switch identifier.rawValue {
 			case "DeviceDataCell":
 				text = node.name
 			case "LastModifiedDataCell":
@@ -256,7 +256,7 @@ class ApplicationViewController: NSViewController, NSOutlineViewDataSource, NSOu
 			view.textField!.stringValue = text
 		} else if let leaf = item as? Tree.Leaf {
 			let text: String
-			switch identifier {
+			switch identifier.rawValue {
 			case "DeviceDataCell":
 				text = leaf.name
 			case "LastModifiedDataCell":
@@ -321,7 +321,7 @@ class ApplicationViewController: NSViewController, NSOutlineViewDataSource, NSOu
 		guard let dataPath = application.dataPath else {
 			return
 		}
-		NSWorkspace.shared().selectFile(nil, inFileViewerRootedAtPath: dataPath)
+		NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: dataPath)
 	}
 
 }

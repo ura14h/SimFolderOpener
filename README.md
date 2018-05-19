@@ -23,8 +23,8 @@ This application will help you to open application document folder in the iOS Si
 
 ## Requirements
 
-* macOS 10.12.5
-* Xcode 8.3
+* macOS 10.13.4
+* Xcode 9.3.1
 
 ## License
 

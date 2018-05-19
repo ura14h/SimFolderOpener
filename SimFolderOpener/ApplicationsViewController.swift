@@ -38,12 +38,12 @@ class ApplicationsViewController: NSViewController, NSTableViewDataSource, NSTab
 		guard let identifier = tableColumn?.identifier else {
 			return nil
 		}
-		let view = tableView.make(withIdentifier: identifier, owner: self) as! NSTableCellView
+		let view = tableView.makeView(withIdentifier: identifier, owner: self) as! NSTableCellView
 
 		guard let applications = applications else {
 			return nil
 		}
-		switch identifier {
+		switch identifier.rawValue {
 		case "BundleIdDataCell":
 			view.textField!.stringValue = applications.list[row].name
 		default:

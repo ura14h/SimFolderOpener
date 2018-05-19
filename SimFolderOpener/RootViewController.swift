@@ -41,7 +41,7 @@ class RootViewController: NSViewController {
 		guard let identifier = segue.identifier else {
 			return
 		}
-		switch identifier {
+		switch identifier.rawValue {
 		case "EmbedDevicesSplitView":
 			guard let controller = segue.destinationController as? DevicesSplitViewController else {
 				return
@@ -91,7 +91,7 @@ class RootViewController: NSViewController {
 		guard let devices = devices else {
 			return
 		}
-		NSWorkspace.shared().selectFile(nil, inFileViewerRootedAtPath: devices.path)
+		NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: devices.path)
 	}
 
 }
